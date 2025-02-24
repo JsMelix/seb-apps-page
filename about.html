@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Kareem Elramady</title>
+    <title>Kareem Elramady</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="grid-overlay"></div>
@@ -13,36 +14,18 @@
         <div class="logo">Kareem <br> Elramady</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home Page</a></li>
-                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="#" class="active">Home Page</a></li>
+                <li><a href="about.html">About Me</a></li> <!-- Enlace a la nueva página -->
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="about-container">
-        <h2>About Me</h2>
-        <p id="bio-text"></p>
-    </section>
+    <main>
+        <h1 id="typing-text"></h1> <!-- Texto animado -->
+    </main>
 
-    <script>
-        // Efecto de tipeo en la biografía
-        document.addEventListener("DOMContentLoaded", function () {
-            const bioTextElement = document.getElementById("bio-text");
-            const bioText = "I'm Kareem Elramady, a passionate web developer focused on creating pixel-perfect and dynamic websites. With years of experience, I bring ideas to life through clean and interactive design.";
-            let bioIndex = 0;
-
-            function typeBioEffect() {
-                if (bioIndex < bioText.length) {
-                    bioTextElement.innerHTML += bioText.charAt(bioIndex);
-                    bioIndex++;
-                    setTimeout(typeBioEffect, 50);
-                }
-            }
-
-            typeBioEffect();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
