@@ -1,137 +1,103 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fondo negro con cuadrícula animada */
 body {
     background: #0a0a0a;
     color: white;
     font-family: 'Press Start 2P', cursive;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Cuadrícula animada */
+/* 🔹 Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 18px;
+    color: cyan;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    color: cyan;
+    border-bottom: 2px solid cyan;
+}
+
+/* 🔹 Cuadrícula de fondo animada */
 #grid-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: gridMove 10s linear infinite;
-    z-index: -1;
+    background-size: 50px 50px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    animation: moveGrid 4s linear infinite;
 }
 
-@keyframes gridMove {
+@keyframes moveGrid {
     from { background-position: 0 0; }
-    to { background-position: 20px 20px; }
+    to { background-position: 50px 50px; }
 }
 
-/* Navbar */
-header {
-    width: 100%;
-    padding: 20px 50px;
+/* 🔹 Contenedor principal */
+.container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 0;
-}
-
-.logo {
-    font-size: 18px;
-    line-height: 1.2;
-}
-
-/* Menú con efecto de subrayado */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #00aaff;
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #00aaff;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after {
-    transform: scaleX(1);
-}
-
-/* Estilo del texto principal */
-h1 {
-    font-size: 24px;
-    max-width: 80%;
-    margin-top: 100px;
-    min-height: 50px;
-}
-
-/* Sección About Me */
-#about {
-    margin-top: 50px;
-    padding: 50px;
+    justify-content: space-between;
     width: 80%;
-    max-width: 600px;
-    border: 2px solid #00aaff;
-    border-radius: 10px;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+.text {
+    flex: 1;
+    font-size: 24px;
     text-align: left;
+    color: cyan;
+    text-shadow: 3px 3px 0px white, -3px -3px 0px white;
 }
 
-#about h2 {
-    text-align: center;
-    color: #00aaff;
+.phone {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-#bio-text {
-    font-size: 14px;
-    line-height: 1.5;
+.phone img {
+    max-width: 250px;
+    animation: float 2s ease-in-out infinite;
 }
 
-/* Animación de aparición */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-h1, nav ul li a {
-    animation: fadeIn 1s ease-in-out;
+/* 🔹 Efecto flotante del celular */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
