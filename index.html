@@ -4,34 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kareem Elramady</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (para iconos en el footer si lo usas) -->
+    <script src="https://kit.fontawesome.com/tu_codigo.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="grid-overlay"></div> <!-- Cuadrícula animada -->
 
+    <!-- Header -->
     <header>
         <div class="logo">Kareem <br> Elramady</div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home Page</a></li>
-                <li><a href="about.html">About Me</a></li>  <!-- Nueva página About -->
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="index.html" class="active">Home Page</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="courses.html">Courses</a></li>  <!-- Sección mejorada -->
+                <li><a href="blog.html">Blog</a></li>        <!-- Sección mejorada -->
             </ul>
         </nav>
     </header>
 
+    <!-- Contenido principal -->
     <main class="container">
         <div class="text">
             <h1 id="typing-text"></h1> <!-- Efecto de tipeo -->
         </div>
         <div class="phone">
-            <img src="phone.png" alt="Celular Render">
+            <img src="assets/phone.png" alt="Celular Render">  <!-- Ruta corregida -->
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Footer dinámico -->
     <footer id="footer"></footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
 </body>
 </html>
