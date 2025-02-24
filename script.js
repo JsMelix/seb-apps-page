@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index < text.length) {
             textElement.innerHTML += text.charAt(index);
             index++;
-            setTimeout(typeEffect, 100); // Velocidad del efecto
+            setTimeout(typeEffect, 100); // Velocidad del tipeo
         }
     }
 
     typeEffect();
 });
-
